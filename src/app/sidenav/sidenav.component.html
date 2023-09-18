@@ -1,0 +1,105 @@
+<mat-nav-list>
+    <div class="logo py-2">
+        <img class="" src="/assets/images/zupee-logo.png">
+    </div>
+    <mat-divider></mat-divider>
+    <h5 class="mt-2 custom-subheader">APPLICATIONS</h5>
+    <div>
+        <div class="menu">
+            <div class="item"><a href="" (click)="toggleSubMenu($event)" style="margin-left: 10px;">
+                <i class="fas fa-home"></i>Home
+                <i class="fas fa-angle-right dropdown" style="margin-top:10px;"></i>
+            </a>
+            <div class="sub-menu" [ngClass]="{'show': isSubMenuOpen}">
+                <!-- <a href="" class="sub-item">1</a>
+                <a href="" class="sub-item">2</a>
+                <a href="" class="sub-item">3</a> -->
+                <a mat-list-item routerLink="/home" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">home</i>Banner
+                </a>
+                <a mat-list-item routerLink="/showOurGames" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">games</i>Our Games
+                </a>
+                <a mat-list-item routerLink="/moneyImage" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">money</i>Money Games
+                </a>
+                <a mat-list-item routerLink="/rating" routerLinkActive="list-item-active" class="custom-list-item items-center">
+                    <i class="material-icons">star</i><span class="mb-4" style="margin-top: -20px;">Rating Image</span>
+                </a>
+                <a mat-list-item routerLink="/reviews" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">reviews</i>Reviews
+                </a>
+                <a mat-list-item routerLink="/video" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="material-icons">video_library</i>Video
+                </a>
+                <a mat-list-item routerLink="/zupeeMember" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">person</i>Zupee Member
+                </a>
+                <a mat-list-item routerLink="/queAns" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">help</i>Que & Ans
+                </a>
+                <a mat-list-item routerLink="/footer" routerLinkActive="list-item-active" class="custom-list-item">
+                    <i class="material-icons">privacy_tip</i>Footer Custom
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="item"><a href="" (click)="toggleAboutUsSubMenu($event)" style="margin-left: 10px;">
+            <i class="fas fa-question-circle"></i>About Us
+            <i class="fas fa-angle-right dropdown" style="margin-top:10px;"></i>
+        </a>
+        <div class="sub-menu" [ngClass]="{'show': isAboutUsSubMenuOpen}">
+            <a mat-list-item routerLink="/abt_banner" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-flag"></i>Banner
+            </a>
+            <a mat-list-item routerLink="/abt_whoweare" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-user-circle"></i>Who We Are  
+            </a>
+            <a mat-list-item routerLink="/abt_gamechange" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-gamepad"></i>Game changer
+            </a>
+            <a mat-list-item routerLink="/abt_dreamteam" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-users"></i>Dream Team
+            </a>
+            <a mat-list-item routerLink="/abt_investjourney" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-chart-line"></i>Investment Journey
+            </a>
+            <a mat-list-item routerLink="/abt_ourvalues" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-shield"></i>Our Values
+            </a>
+            <a mat-list-item routerLink="/abt_investors" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-briefcase"></i>Investors
+            </a>
+            <a mat-list-item routerLink="/abt_video" routerLinkActive="list-item-active" class="custom-list-item">
+                <i class="fas fa-film"></i>Video
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+   
+    <!-- <a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>dashboard</mat-icon>Dashboard
+    </a> -->
+    <!-- <a mat-list-item routerLink="/ourgames" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>games</mat-icon>Our Games
+    </a>
+    <a mat-list-item routerLink="/aboutus" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>about</mat-icon>About Us
+    </a>
+    <a mat-list-item routerLink="/faqs" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>faqs</mat-icon>FAQs
+    </a>
+    <a mat-list-item routerLink="/blog" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>blog</mat-icon>BLOG
+    </a>
+    <a mat-list-item routerLink="/newsroom" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>newsroom</mat-icon>News Room
+    </a>
+    <a mat-list-item routerLink="/contactus" routerLinkActive="list-item-active" class="custom-list-item">
+        <mat-icon>contact</mat-icon>Contact Us
+    </a> -->
+</mat-nav-list>

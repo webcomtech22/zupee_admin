@@ -1,0 +1,391 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+           
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">Edit BannerData</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                      <form (ngSubmit)="editBanner()">
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Heading</label>
+                                          <input type="text" class="form-control" name="heading" [(ngModel)]="bannerData.heading">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword1" class="form-label">Description</label>
+                                          <input type="text" class="form-control" name="description" [(ngModel)]="bannerData.description">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + bannerData.bannerImage" height="70">
+                                          <input type="file" class="" (change)="imageUpload($event)">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                      </form>
+                                    </div>
+                                 </div>     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="row mt-5">
+                  <div class="">
+                      <div class="card">
+                          <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                              <h4 class="card-title">Edit Our Games</h4>
+                          </div>
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">id</th>
+                                      <th scope="col">Game Image</th>
+                                      <th scope="col">Game Name</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let obj of ourGamesData">
+                                      <th scope="row">{{obj.id}}</th>
+                                      <td><img [src]="path + obj.gameImage" height="40">
+                                      <td>{{obj.name}}</td>
+                                      <td><button class="btn btn-danger" (click)="deleteOurGames(obj.id)">Delete</button></td>
+                                      <td><button class="btn btn-primary" routerLink="/ourgames2/{{obj.id}}">Edit</button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                      </div>
+                  </div>
+                </div>
+
+
+                <div class="row mt-5">
+                  <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                              <h4 class="card-title">Edit Money Images</h4>
+                          </div>
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">id</th>
+                                      <th scope="col">Game Image</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let obj of moneyGamesData">
+                                      <th scope="row">{{obj.id}}</th>
+                                      <td><img [src]="path + obj.moneyImage" height="50">
+                                      <td><button class="btn btn-danger" (click)="deleteMoneyGames(obj.id)">Delete</button></td>
+                                      <td><button class="btn btn-primary" routerLink="/editMoneyImage/{{obj.id}}">Edit</button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                      </div>
+                  </div>
+                </div>
+
+
+                <div class="row mt-5">
+                  <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                              <h4 class="card-title">Edit Rating Data</h4>
+                          </div>
+                          <div class="card-body">
+                              <form>
+                                  <div class="row">
+                                      <div class="col-md-12">
+  
+                                        <form (ngSubmit)="editRating()">
+                                          <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Heading</label>
+                                            <input type="text" class="form-control" name="heading" [(ngModel)]="ratingImageData.heading">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Description</label>
+                                            <input type="text" class="form-control" name="description" [(ngModel)]="ratingImageData.description">
+                                          </div>
+                                          <div class="mb-3 d-flex">
+                                            <img [src]="path + ratingImageData.image" height="70" width="100">
+                                            <input type="file" class="" (change)="imageUpload($event)">
+                                          </div>
+                                          <button type="submit" class="btn btn-primary">Update</button>
+                                        </form>
+                                      </div>
+                                   </div>     
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+  
+
+                  <div class="row mt-5">
+                    <div class="">
+                        <div class="card">
+                            <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                <h4 class="card-title">Edit Review Images</h4>
+                            </div>
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Id</th>
+                                        <th>Review Image</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let obj of reviewsData">
+                                        <td scope="row">{{obj.id}}</td>
+                                        <td><img [src]="path + obj.image" height="50"></td>
+                                        <td>{{obj.name}}</td>
+                                        <td>{{obj.description}}</td>
+                                        <td><button class="btn btn-danger" (click)="deleteReviews(obj.id)">Delete</button></td>
+                                        <td><button class="btn btn-primary" routerLink="/editReviews/{{obj.id}}">Edit</button></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                        </div>
+                    </div>
+                  </div>
+  
+                
+                  <div class="row mt-5">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                <h4 class="card-title">Edit Zupee Is Member Of</h4>
+                            </div>
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Id</th>
+                                        <th>Review Image</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let obj of zupeeMemberData">
+                                        <td scope="row">{{obj.id}}</td>
+                                        <td><img [src]="path + obj.image" height="50">
+                                        <td><button class="btn btn-danger" (click)="deleteZupeeMember(obj.id)">Delete</button></td>
+                                        <td><button class="btn btn-primary" routerLink="/editZupeeMember/{{obj.id}}">Edit</button></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                        </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="row mt-5">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                <h4 class="card-title">Edit Social Links</h4>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-12">
+    
+                                          <form (ngSubmit)="editfooterCustom()">
+                                            <div class="mb-3 d-flex">
+                                              <img [src]="path + footerCustomData.logoImage" height="50" width="50" class="bg-black">
+                                              <input type="file" class="" name="logoImage" (change)="imageUpload2($event,1)">
+                                            </div>
+                                            <div class="mb-3 d-flex">
+                                              <img [src]="path + footerCustomData.facebook" height="50">
+                                              <input type="file" class="" name="facebook" (change)="imageUpload2($event,2)">
+                                            </div>
+                                            <div class="mb-3 d-flex">
+                                              <img [src]="path + footerCustomData.instagram" height="50">
+                                              <input type="file" class=""  name="instagram" (change)="imageUpload2($event,3)">
+                                            </div>
+                                            <div class="mb-3 d-flex">
+                                              <img [src]="path + footerCustomData.youtube" height="50">
+                                              <input type="file" class=""  name="youtube"(change)="imageUpload2($event,4)">
+                                            </div>
+                                            <div class="mb-3 d-flex">
+                                              <img [src]="path + footerCustomData.messanger" height="50">
+                                              <input type="file" class=""  name="messanger" (change)="imageUpload2($event,5)">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Last Text</label>
+                                              <input type="text" class="form-control" name="lastText" [(ngModel)]="footerCustomData.lastText">
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                          </form>
+                                        </div>
+                                     </div>     
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-5">
+                      <div class="">
+                          <div class="card">
+                              <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                  <h4 class="card-title">Edit Questions & answers</h4>
+                              </div>
+                                    <table class="table table-striped">
+                                      <thead>
+                                        <tr>
+                                          <th>Id</th>
+                                          <th>Questions</th>
+                                          <th>Answers</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngFor="let obj of queAnsData">
+                                          <td scope="row">{{obj.id}}</td>
+                                          <td>{{obj.question}}</td>
+                                          <td>{{obj.answer}}</td>
+                                          <td><button class="btn btn-danger" (click)="deleteQueAns(obj.id)">Delete</button></td>
+                                          <td><button class="btn btn-primary" routerLink="/editQueAns/{{obj.id}}">Edit</button></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="row mt-5">
+                      <div class="col-md-8">
+                          <div class="card">
+                              <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                  <h4 class="card-title">Edit Rating Data</h4>
+                              </div>
+                              <div class="card-body">
+                                  <form>
+                                      <div class="row">
+                                          <div class="col-md-12">
+      
+                                            <form (ngSubmit)="editVideo()">
+                                              <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Heading</label>
+                                                <input type="text" class="form-control" name="heading" [(ngModel)]="videoData.heading">
+                                              </div>
+                                              <div class="mb-3 d-flex">
+                                                <img [src]="path + videoData.video" height="70" width="100">
+                                                <input type="file" class="" (change)="imageUpload($event)">
+                                              </div>
+                                              <button type="submit" class="btn btn-primary">Update</button>
+                                            </form>
+                                          </div>
+                                       </div>     
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+  
+
+                      <div class="row mt-5">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                    <h4 class="card-title">Add Question-answer Data</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-12">
+        
+                                              <form (ngSubmit)="addQueAns()">
+                                                <div class="mb-3">
+                                                  <label for="exampleInputEmail1" class="form-label">Question</label>
+                                                  <textarea type="text" class="form-control" name="question" [(ngModel)]="queAnsData.question"></textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputEmail1" class="form-label">Answer</label>
+                                                  <textarea type="text" class="form-control" name="answer" [(ngModel)]="queAnsData.answer"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add</button>
+                                              </form>
+                                            </div>
+                                         </div>     
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-5">
+                          <div class="col-md-8">
+                              <div class="card">
+                                  <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                      <h4 class="card-title">Add Question-answer Data</h4>
+                                  </div>
+                                  <div class="card-body">
+                                      <form>
+                                          <div class="row">
+                                              <div class="col-md-12">
+          
+                                                <form (ngSubmit)="addReviews()">
+                                                  <div class="mb-3 d-flex">
+                                                    <input type="file" class="" name="image" (change)="imageUpload($event)">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                                                    <input type="text" class="form-control" name="name" [(ngModel)]="reviewsData.name">
+                                                  </div>
+                                                  <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                                                    <textarea type="text" class="form-control" name="description" [(ngModel)]="reviewsData.description"></textarea>
+                                                  </div>
+                                                  <button type="submit" class="btn btn-primary">Add</button>
+                                                </form>
+                                              </div>
+                                           </div>     
+                                      </form>
+                                  </div>
+                              </div>
+                          </div> -->
+
+            </div>
+          </div>
+       </div>
+    </div>
+
+
+     <!-- <div class="row">
+      <div class="col-md-12">
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Title" type="text" name="title" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description" name="description" ></textarea>
+    </mat-form-field>
+     <mat-form-field class="example-full-width" appearance="fill">  
+      <div class="d-flex">
+      <input class="mt-4" matInput type="file">
+      <img class="" src="#" height="50px">
+      </div>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="satisfiedCustomers" type="text" name="satisfiedCustomer" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="professionalAgents" type="text" name="professionalAgents" >
+    </mat-form-field>
+     <mat-form-field class="example-full-width">
+      <input matInput placeholder="profectFinished" type="text" name="projectFinished" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="hoursSupport" type="text" name="hoursSupport" >
+    </mat-form-field>
+    
+  </div>
+</div>
+<button mat-raised-button class="btn btn-danger pull-right">Update</button>
+<div class="clearfix"></div> -->

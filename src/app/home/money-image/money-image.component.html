@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+
+
+          <div class="row mt-5">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                        <h4 class="card-title">Add Money Image Data</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                  <form (ngSubmit)="addMoneyImage()">
+                                    <div class="mb-3 d-flex">
+                                      <input type="file" class="" name="image" (change)="imageUpload($event)">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                  </form>
+                                </div>
+                             </div>     
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">View Money Images</h4>
+                        </div>
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Game Image</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let obj of moneyGamesData">
+                                    <th scope="row">{{obj.id}}</th>
+                                    <td><img [src]="path + obj.moneyImage" height="50">
+                                    <td><button class="btn btn-danger" (click)="deleteMoneyGames(obj.id)">Delete</button></td>
+                                    <td><button class="btn btn-primary" routerLink="/editMoneyImage/{{obj.id}}">Edit</button></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                    </div>
+                </div>
+              </div>
+
+</div>
+</div>
+</div>

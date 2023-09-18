@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="page__box p-3">About Us</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+        
+                    <div class="row mt-5">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                                    <h4 class="card-title">Add Dream Team Data</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-12">
+        
+                                              <form (ngSubmit)="addDreamTeam()">
+                                                <div class="mb-3 d-flex">
+                                                  <input type="file" class="" name="image" (change)="imageUpload($event)">
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                                                  <input type="text" class="form-control" name="name" [(ngModel)]="dreamTeamData.name">
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputEmail1" class="form-label">Post</label>
+                                                  <input type="text" class="form-control" name="name" [(ngModel)]="dreamTeamData.post">
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputEmail1" class="form-label">Description</label>
+                                                  <textarea type="text" class="form-control" name="description" [(ngModel)]="dreamTeamData.description"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add</button>
+                                              </form>
+                                            </div>
+                                         </div>     
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+        
+
+
+
+            <div class="row mt-5">
+                <div class="">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">View Dream Team Data</h4>
+                        </div>
+                        <div class="table-responsive">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Post</th>
+                                    <th>Description</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let obj of dreamTeamData">
+                                    <td scope="row">{{obj.id}}</td>
+                                    <td><img [src]="path + obj.image" height="50"></td>
+                                    <td>{{obj.name}}</td>
+                                    <td>{{obj.post}}</td>
+                                    <td>{{obj.description}}</td>
+                                    <td><button class="btn btn-danger" (click)="deleteDreamTeam(obj.id)">Delete</button></td>
+                                    <td><button class="btn btn-primary" routerLink="/editdreamteam/{{obj.id}}">Edit</button></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                    </div>
+                </div>
+              </div></div>

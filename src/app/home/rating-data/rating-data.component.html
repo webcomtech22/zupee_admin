@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">Edit Rating Data</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                    <form (ngSubmit)="editRating()">
+                                        <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Heading</label>
+                                        <input type="text" class="form-control" name="heading" [(ngModel)]="ratingImageData.heading">
+                                        </div>
+                                        <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Description</label>
+                                        <input type="text" class="form-control" name="description" [(ngModel)]="ratingImageData.description">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                        <img [src]="path + ratingImageData.image" height="70" width="100">
+                                        <input type="file" class="" (change)="imageUpload($event)">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>
+                                    </div>
+                                </div>     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                </div></div></div>

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">Edit Footer Custom Links</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                      <form (ngSubmit)="editfooterCustom()">
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + footerCustomData.logoImage" height="50" width="50" class="bg-black">
+                                          <input type="file" class="" name="logoImage" (change)="imageUpload2($event,1)">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + footerCustomData.facebook" height="50">
+                                          <input type="file" class="" name="facebook" (change)="imageUpload2($event,2)">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + footerCustomData.instagram" height="50">
+                                          <input type="file" class=""  name="instagram" (change)="imageUpload2($event,3)">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + footerCustomData.youtube" height="50">
+                                          <input type="file" class=""  name="youtube"(change)="imageUpload2($event,4)">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                          <img [src]="path + footerCustomData.messanger" height="50">
+                                          <input type="file" class=""  name="messanger" (change)="imageUpload2($event,5)">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Last Text</label>
+                                          <input type="text" class="form-control" name="lastText" [(ngModel)]="footerCustomData.lastText">
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                      </form>
+                                    </div>
+                                 </div>     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+</div></div></div>

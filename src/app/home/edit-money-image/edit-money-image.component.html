@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">Edit Money Images</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                      <form (ngSubmit)="submitForm()">
+                                        <div class="mb-3 d-flex">
+                                            <input type="file" class="" (change)="imageUpload($event)">
+                                            <img [src]="path + moneyImage.moneyImage" height="70">
+                                          </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                      </form>
+                                    </div>
+                                 </div>     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+    </div></div></div>

@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="page__box p-3">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="page__content-data">
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">Add Question-answer Data</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                      <form (ngSubmit)="addQueAns()">
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Question</label>
+                                          <textarea type="text" class="form-control" name="question" [(ngModel)]="queAnsData.question"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Answer</label>
+                                          <textarea type="text" class="form-control" name="answer" [(ngModel)]="queAnsData.answer"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                      </form>
+                                    </div>
+                                 </div>     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="row mt-5">
+                <div class="">
+                    <div class="card">
+                        <div class="card-header" style="background: #ffe800;color: #4611a7;">
+                            <h4 class="card-title">View Questions & answers</h4>
+                        </div>
+                        <div class="table-responsive">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>Id</th>
+                                    <th>Questions</th>
+                                    <th>Answers</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let obj of queAnsData">
+                                    <td scope="row">{{obj.id}}</td>
+                                    <td>{{obj.question}}</td>
+                                    <td>{{obj.answer}}</td>
+                                    <td><button class="btn btn-danger" (click)="deleteQueAns(obj.id)">Delete</button></td>
+                                    <td><button class="btn btn-primary" routerLink="/editQueAns/{{obj.id}}">Edit</button></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                    </div>
+                </div>
+              </div>
+
+</div>
+</div>
+</div></div>
